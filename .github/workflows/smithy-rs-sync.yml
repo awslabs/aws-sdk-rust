@@ -1,6 +1,5 @@
 on:
   workflow_dispatch:
-  pull_request:
   schedule:
     # Run at the top of the hour, every hour
     - cron:  '0 * * * *'
@@ -51,11 +50,9 @@ jobs:
           --smithy-rs /home/runner/work/aws-sdk-rust/aws-sdk-rust/smithy-rs \
           --aws-sdk /home/runner/work/aws-sdk-rust/aws-sdk-rust/aws-sdk-rust \
           --branch ${{ env.sync_to_branch }} \
-          --max-commits-to-sync 1
+          --max-commits-to-sync 5
     - name: push commits
       working-directory: aws-sdk-rust
-      # git config user.name ${{ secrets.GH_USER }}
-      # git config user.email "${{ secrets.GH_MAIL }}"
       run: |
         git config --global user.name "AWS SDK Rust Bot"
         git config --global user.email "aws-sdk-rust-primary@amazon.com"
