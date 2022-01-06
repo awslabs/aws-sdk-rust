@@ -10,29 +10,52 @@ env:
   rust_version: 1.54.0
   rust_toolchain_components: clippy,rustfmt
   java_version: 11
+  sync_to_branch: bot-next
+  sync_from_branch: main
 
 jobs:
-  repo-lint:
-    name: run sync tool
+  run-sync-tool:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - name: checkout aws-sdk-rust
+      uses: actions/checkout@v2
       with:
-        ref: next
-    - uses: actions/checkout@v2
+        ref: ${{ env.sync_to_branch }}
+        path: aws-sdk-rust
+        fetch-depth: 0
+    - name: checkout smithy-rs
+      uses: actions/checkout@v2
       with:
-        repository: 'awslabs/smithy-rs'
+        repository: awslabs/smithy-rs
+        ref: ${{ env.sync_from_branch }}
+        path: smithy-rs
+        fetch-depth: 0
     - uses: actions-rs/toolchain@v1
       with:
         toolchain: ${{ env.rust_version }}
         components: ${{ env.rust_toolchain_components }}
         default: true
-    - name: build sync tool
+    - uses: actions/setup-java@v1
+      with:
+        java-version: ${{ env.java_version }}
+    - name: fetch aws-sdk-rust
+      working-directory: aws-sdk-rust
+      run: git fetch --no-tags --progress --no-recurse-submodules --depth=1 origin ${{ env.sync_to_branch }}
+    - name: fetch smithy-rs
+      working-directory: smithy-rs
+      run: git fetch --no-tags --progress --no-recurse-submodules --depth=1 origin ${{ env.sync_from_branch }}
+    - name: run sync tool
       working-directory: smithy-rs/tools/smithy-rs-sync
       run: |
-          cargo run -- \
-          --smithy-rs ../../ \
-          --aws-sdk ../../../aws-sdk-rust
+        cargo run -- \
+          --smithy-rs /home/runner/work/aws-sdk-rust/aws-sdk-rust/smithy-rs \
+          --aws-sdk /home/runner/work/aws-sdk-rust/aws-sdk-rust/aws-sdk-rust \
+          --branch ${{ env.sync_to_branch }} \
+          --max-commits-to-sync 5
     - name: push commits
-      run: git push
       working-directory: aws-sdk-rust
+      run: |
+        git config --global user.name "AWS SDK Rust Bot"
+        git config --global user.email "aws-sdk-rust-primary@amazon.com"
+        git remote add gh-token "https://${{ secrets.GH_TOKEN }}@github.com/:user/:repo.git"
+        git push
