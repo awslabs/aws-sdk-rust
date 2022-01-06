@@ -40,7 +40,6 @@ members = [
     "examples/sns",
     "examples/sqs",
     "examples/ssm",
-    "examples/telephone-game",
     "examples/transcribestreaming",
     "examples/using_native_tls_instead_of_rustls",
     "sdk/accessanalyzer",
