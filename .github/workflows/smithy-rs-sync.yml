@@ -24,7 +24,6 @@ jobs:
         token: ${{ secrets.AWS_SDK_RUST_CI_PAT }}
         ref: ${{ env.sync_to_branch }}
         path: aws-sdk-rust
-        fetch-depth: 0
     - name: checkout smithy-rs
       uses: actions/checkout@v2
       with:
@@ -47,7 +46,7 @@ jobs:
           --smithy-rs /home/runner/work/aws-sdk-rust/aws-sdk-rust/smithy-rs \
           --aws-sdk /home/runner/work/aws-sdk-rust/aws-sdk-rust/aws-sdk-rust \
           --branch ${{ env.sync_to_branch }} \
-          --max-commits-to-sync 5
+          --max-commits-to-sync 1
     - name: push commits
       working-directory: aws-sdk-rust
       run: |
