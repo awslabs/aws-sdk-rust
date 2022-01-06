@@ -24,6 +24,7 @@ jobs:
         token: ${{ secrets.AWS_SDK_RUST_CI_PAT }}
         ref: ${{ env.sync_to_branch }}
         path: aws-sdk-rust
+        fetch-depth: 0
     - name: checkout smithy-rs
       uses: actions/checkout@v2
       with:
