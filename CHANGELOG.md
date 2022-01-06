@@ -1,3 +1,37 @@
+<!-- Do not manually edit this file, use `update-changelogs` -->
+0.4.0 (January 6th, 2022)
+=========================
+**Breaking Changes:**
+- ⚠ (smithy-rs#990) Codegen will no longer produce builders and clients with methods that take `impl Into<T>` except for strings and boxed types.
+- ⚠ (smithy-rs#961) The `meta`, `environment`, and `dns` Cargo feature flags were removed from `aws-config`.
+    The code behind the `dns` flag is now enabled when `rt-tokio` is enabled. The code behind
+    the `meta` and `environment` flags is always enabled now.
+- ⚠ (smithy-rs#1003) `aws_http::AwsErrorRetryPolicy` was moved to `aws_http::retry::AwsErrorRetryPolicy`.
+- ⚠ (smithy-rs#1017, smithy-rs#930) Simplify features in aws-config. All features have been removed from `aws-config` with the exception of: `rt-tokio`, `rustls` and `native-tls`. All other features are now included by default. If you depended on those features specifically, remove them from your features listing.
+
+**New this release:**
+- :warning: MSRV increased from 1.54.0 to 1.55.0 per our 2-behind MSRV policy.
+- 🎉 (aws-sdk-rust#47, smithy-rs#1006) Add support for paginators! Paginated APIs now include `.into_paginator()` and (when supported) `.into_paginator().items()` to enable paginating responses automatically. The paginator API should be considered in preview and is subject to change pending customer feedback.
+- (smithy-rs#712) We removed an example 'telephone-game' that was problematic for our CI.
+    The APIs that that example demonstrated are also demonstrated by our Polly
+    and TranscribeStreaming examples so please check those out if you miss it.
+- 🐛 (aws-sdk-rust#357) Generated docs should no longer contain links that don't go anywhere
+- (aws-sdk-rust#254, @jacco) Made fluent operation structs cloneable
+- (smithy-rs#973) Debug implementation of Credentials will print `expiry` in a human readable way.
+- 🐛 (smithy-rs#999, smithy-rs#143, aws-sdk-rust#344) Add Route53 customization to trim `/hostedzone/` prefix prior to serialization. This fixes a bug where round-tripping a hosted zone id resulted in an error.
+- 🐛 (smithy-rs#998, aws-sdk-rust#359) Fix bug where ECS credential provider could not perform retries.
+- (smithy-rs#1003) Add recursion detection middleware to the default stack
+- (smithy-rs#1002, aws-sdk-rust#352) aws_types::Config is now `Clone`
+- (smithy-rs#670, @jacco) Example for Config builder region function added
+- (smithy-rs#1021, @kiiadi) Add function to `aws_config::profile::ProfileSet` that allows listing of loaded profiles by name.
+- 🐛 (smithy-rs#1046, aws-sdk-rust#384) Fix IMDS credentials provider bug where the instance profile name was incorrectly cached.
+
+**Contributors**
+Thank you for your contributions! ❤
+- @jacco (aws-sdk-rust#254, smithy-rs#670)
+- @kiiadi (smithy-rs#1021)
+
+
 v0.3.0 (December 15th, 2021)
 ============================
 **Breaking Changes:**
@@ -6,11 +40,11 @@ v0.3.0 (December 15th, 2021)
 
     **Upgrade guide**
 
-    | before                          | after |
-    |---------------------------------|-------|
-    | `aws-smithy-async = "VERSION"`  | `aws-smithy-async = { version = "VERSION", features = ["rt-tokio"] }` |
+    | before                          | after                                                                                            |
+    | ------------------------------- | ------------------------------------------------------------------------------------------------ |
+    | `aws-smithy-async = "VERSION"`  | `aws-smithy-async = { version = "VERSION", features = ["rt-tokio"] }`                            |
     | `aws-smithy-client = "VERSION"` | `aws-smithy-client = { version = "VERSION", features = ["client-hyper", "rustls", "rt-tokio"] }` |
-    | `aws-smithy-http = "VERSION"`   | `aws-smithy-http = { version = "VERSION", features = ["rt-tokio"] }` |
+    | `aws-smithy-http = "VERSION"`   | `aws-smithy-http = { version = "VERSION", features = ["rt-tokio"] }`                             |
 - ⚠ (smithy-rs#940) `aws_hyper::Client` which was just a re-export of `aws_smithy_types::Client` with generics set has been removed. If you used
     `aws_hyper::Client` or `aws_hyper::Client::https()` you can update your code to use `aws_smithy_client::Builder::https()`.
 - ⚠ (smithy-rs#947) The features `aws-hyper/rustls` and `aws-hyper/native-tls` have been removed. If you were using these, use the identical features on `aws-smithy-client`.
@@ -28,10 +62,13 @@ v0.3.0 (December 15th, 2021)
 - (smithy-rs#920) Fix typos in module documentation for generated crates
 - 🐛 (aws-sdk-rust#301, smithy-rs#892) Avoid serializing repetitive `xmlns` attributes when serializing XML. This reduces the length of serialized requests and should improve compatibility with localstack.
 - 🐛 (smithy-rs#953, aws-sdk-rust#331) Fixed a bug where certain characters caused a panic during URI encoding.
+- 🐛 (smithy-rs#957) Include non-service-specific examples in the root Cargo workspace so that they can build
+- 🐛 (smithy-rs#979) Make `aws-smithy-client` a required dependency in generated services.
 
 **Contributors**
 Thank you for your contributions! ❤
 - @a-xp (smithy-rs#949)
+
 
 v0.2.0 (December 2nd, 2021)
 ===========================
@@ -40,7 +77,6 @@ v0.2.0 (December 2nd, 2021)
 
 v0.1.0 (December 2nd, 2021)
 ===========================
-
 **New this release**
 - Add docs.rs metadata section to all crates to document all features
 - [Added a new example showing how to set all currently supported timeouts](./examples/setting_timeouts/src/main.rs)
@@ -49,6 +85,13 @@ v0.1.0 (December 2nd, 2021)
 
 v0.0.26-alpha (November 23rd, 2021)
 ===================================
+
+**New this release**
+- :tada: Timeouts for requests are now configurable. You can set a timeout for each individual request attempt or for all attempts made for a request. (smithy-rs#831)
+  - `SdkError` now includes a variant `TimeoutError` for when a request times out  (smithy-rs#885)
+- Improve docs on `aws-smithy-client` (smithy-rs#855)
+- Fix http-body dependency version (smithy-rs#883, aws-sdk-rust#305)
+
 
 **Breaking Changes**
 - `RetryConfigBuilder::merge_with` has been renamed to `RetryConfigBuilder::take_unset_from`

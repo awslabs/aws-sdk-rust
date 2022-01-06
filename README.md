@@ -1,4 +1,4 @@
-# The AWS SDK for Rust [![Docs](https://img.shields.io/badge/docs-v0.3.0-blue)](https://awslabs.github.io/aws-sdk-rust/) ![MSRV](https://img.shields.io/badge/msrv-1.54-red) [![Usage Guide](https://img.shields.io/badge/Developer_Guide-blue)](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/welcome.html)
+# The AWS SDK for Rust [![Docs](https://img.shields.io/badge/docs-v0.4.0-blue)](https://awslabs.github.io/aws-sdk-rust/) ![MSRV](https://img.shields.io/badge/msrv-1.55-red) [![Usage Guide](https://img.shields.io/badge/Developer_Guide-blue)](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/welcome.html)
 
 This repo contains the new AWS SDK for Rust (the SDK) and its [public roadmap](https://github.com/awslabs/aws-sdk-rust/projects/1).
 
@@ -19,8 +19,8 @@ The SDK provides one crate per AWS service. You must add [Tokio](https://crates.
 
     ```toml
     [dependencies]
-    aws-config = "0.3.0"
-    aws-sdk-dynamodb = "0.3.0"
+    aws-config = "0.4.0"
+    aws-sdk-dynamodb = "0.4.0"
     tokio = { version = "1", features = ["full"] }
     ```
 
@@ -77,7 +77,7 @@ If you are interested in contributing to the SDK, please take a look at [CONTRIB
 
 ## Supported Rust Versions (MSRV)
 
-The SDK currently requires a minimum of Rust 1.54, and is not guaranteed to build on compiler versions earlier than that. While we are still in alpha, we will be keeping the minimum compiler version two releases behind the latest stable release where possible (so if the latest stable were 1.55, we would be on 1.53). However, we are not making any guarantees around this at present. Increases in minimum required Rust version will be called out in the Release Notes for new releases of the SDK.
+The SDK currently requires a minimum of Rust 1.55, and is not guaranteed to build on compiler versions earlier than that. While we are still in alpha, we will be keeping the minimum compiler version two releases behind the latest stable release where possible (so if the latest stable were 1.55, we would be on 1.53). However, we are not making any guarantees around this at present. Increases in minimum required Rust version will be called out in the Release Notes for new releases of the SDK.
 
 ## Additional Resources
 
